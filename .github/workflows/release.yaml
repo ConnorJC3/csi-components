@@ -26,6 +26,7 @@ permissions:
   
 jobs:
   push-images:
+    if: ${{ github.repository == 'aws/csi-components' }}
     runs-on:
       - codebuild-csi-components-e2e-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
