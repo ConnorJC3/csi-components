@@ -26,6 +26,7 @@ permissions:
   
 jobs:
   push-images:
+    if: ${{ github.repository == 'aws/csi-components' }}
     runs-on:
       - codebuild-csi-components-e2e-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
@@ -45,7 +46,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00
         with:
-          go-version: '1.24'
+          go-version: '1.26'
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@29109295f81e9208d7d86ff1c6c12d2833863392
