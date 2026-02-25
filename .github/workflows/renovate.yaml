@@ -17,3 +17,4 @@ jobs:
           token: ${{ github.token }}
         env:
           RENOVATE_AUTODISCOVER: 'true'
+          RENOVATE_FORK_PROCESSING: 'enabled'
